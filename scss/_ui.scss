@@ -1,0 +1,132 @@
+// Helpful Classes
+.bold {
+  font-weight: 700;
+}
+
+// Buttons
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: $brBig;
+  background-color: $cSecondary;
+
+  font-size: 24px;
+  font-family: $ffMain;
+  color: #fff;
+  
+  cursor: pointer;
+
+  &-text {
+    text-transform: uppercase;
+  }
+
+  &-signup {
+    font-size: 30px;
+  }
+
+  &-small {
+    font-size: 15px;
+  }
+}
+
+// Select
+.select {
+	position: relative;
+
+  &--active .select__button::after {
+      transform: translateY(-50%) rotate(180deg);
+  }
+}
+
+.select__button {
+	position: relative;
+	display: flex;
+  align-items: center;
+  gap: 15px;
+
+	background: transparent;
+
+  font-family: $ffMain;
+	font-weight: 400;
+  color: #fff;
+	font-size: $fsText;
+  padding-right: 15px;
+
+	cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: calc(50% + 1px);
+    right: 0;
+    transform: translateY(-50%);
+    transform-origin: center;
+
+    width: 0;
+    height: 0;
+    border-width: 6px 5px 0 5px;
+    border-color: #fff	transparent transparent transparent;
+    border-style: solid;
+
+    transition: transform .2s linear;
+
+    pointer-events: none;
+  }
+}
+
+
+.select__list {
+	display: none;
+
+	position: absolute;
+	left: 0;
+	top: 30px;
+
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+
+	background: transparent;
+	overflow: hidden;
+
+	z-index: 1;
+
+  &--visible {
+    display: block;
+  }
+}
+
+.select__list-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  
+  width: 100%;
+	margin: 0;
+	padding: 0;
+  
+  padding: 8px;
+
+  background-color: transparent;
+  color: #fff;
+  
+  font-family: $ffMain;
+  font-size: $fsText;
+	cursor: pointer;
+
+  transition: background-color .2s linear;
+
+  &:hover, &:focus {
+    background-color: rgba(0, 0, 0, .3);
+  }
+}
+
+.select__input-hidden {
+	display: none;
+}
+
+.select__list--visible {
+  display: block;
+}
