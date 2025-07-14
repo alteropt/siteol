@@ -73,3 +73,23 @@ const introSwiper = new Swiper('.intro__inner', {
     clickable: true
   }
 })
+
+// Portfolio Tabs
+const portfolioTabs = document.querySelectorAll('.portfolio__tabs button')
+const portfolioItemsBlocks = document.querySelectorAll('.portfolio__items')
+
+portfolioTabs.forEach(portfolioTab => {
+  portfolioTab.addEventListener('click', () => {
+    const currentData = portfolioTab.dataset.portfolio
+    portfolioTabs.forEach(tab => {tab.classList.remove('active')})
+    portfolioTab.classList.add('active')
+    portfolioItemsBlocks.forEach(portfolioItemsBlock => {
+      if(portfolioItemsBlock.dataset.portfolio === currentData) {
+        portfolioItemsBlock.classList.add('active')
+      } else {
+        portfolioItemsBlock.classList.remove('active')
+      }
+    })
+  })
+})
+

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap");
 @font-face {
   font-family: "Verdana", sans-serif;
@@ -473,8 +474,348 @@ header {
   color: #000;
 }
 .contact__form input {
-  border: 1px solid #eb6423;
+  border: 1px solid rgba(235, 100, 35, 0.5);
+}
+.contact__form input:focus {
+  border-color: rgb(235, 100, 35);
 }
 .contact__form button {
   padding: 16px 0;
+  transition: background-color 0.2s linear;
+}
+.contact__form button:focus, .contact__form button:hover {
+  background-color: #5546aa;
+}
+
+.portfolio {
+  padding: 98px 0;
+}
+.portfolio__title {
+  margin-bottom: 35px;
+}
+.portfolio__tabs {
+  width: 100%;
+  border-bottom: 2px solid #C3C3C3;
+  margin-bottom: 40px;
+}
+.portfolio__tabs button {
+  background: transparent;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  color: #4b4b4b;
+  font-family: "Verdana", sans-serif;
+  font-size: 20px;
+  padding: 10px 70px;
+  position: relative;
+}
+.portfolio__tabs button::before, .portfolio__tabs button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #eb6423;
+  transition: width 0.2s linear;
+}
+.portfolio__tabs button::before {
+  right: 50%;
+}
+.portfolio__tabs button::after {
+  left: 50%;
+}
+.portfolio__tabs button:hover::before, .portfolio__tabs button:hover::after, .portfolio__tabs button.active::before, .portfolio__tabs button.active::after {
+  width: 50%;
+}
+.portfolio__items {
+  display: none;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.portfolio__items.active {
+  display: flex;
+}
+.portfolio__item {
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-basis: 30%;
+}
+.portfolio__item-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+.portfolio__item-image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.portfolio__item-image::after {
+  content: "Перейти";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background-color: rgba(235, 100, 35, 0.5);
+  transform: translateY(100%);
+  transition: transform 0.2s linear;
+}
+.portfolio__item-image:hover::after {
+  transform: translateY(0);
+}
+.portfolio__item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.portfolio__item-name, .portfolio__item-desc {
+  font-size: 20px;
+}
+.portfolio__item-chrs {
+  display: flex;
+  gap: 8px;
+}
+.portfolio__item-chrs li {
+  background-color: #5546aa;
+  padding: 5px 10px;
+  font-size: 13px;
+  gap: 5px;
+  cursor: default;
+}
+
+.map {
+  padding: 60px 0 80px;
+  background-image: url(../img/background/background-map.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.map .container {
+  position: relative;
+}
+.map__card {
+  color: #000;
+  background-color: #fff;
+  box-shadow: 0px 0px 7px 0px rgba(160, 160, 160, 0.25);
+  padding: 35px;
+  border-radius: 15px;
+  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.map__card-name {
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+.map__card-prof {
+  font-size: 15px;
+  opacity: 0.5;
+}
+.map__card-photos {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.map__quotes {
+  width: 84px;
+}
+.map__quote {
+  margin-top: 10px;
+}
+.map__object {
+  position: absolute;
+  padding: 8px;
+  background-color: #fff;
+  color: #000;
+  border-radius: 15px;
+  display: flex;
+  gap: 8px;
+  max-width: 250px;
+}
+.map__object:nth-child(1) {
+  right: 40px;
+  top: 5%;
+}
+.map__object:nth-child(2) {
+  left: 50%;
+  top: 30%;
+}
+.map__object:last-child {
+  bottom: 10%;
+  right: 10%;
+}
+.map__object-icon {
+  position: absolute;
+  top: -23px;
+  left: -23px;
+}
+.map__object-address {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+.map__object-desc {
+  font-size: 10px;
+}
+
+.advantages {
+  padding: 60px 0 120px;
+}
+.advantages__title {
+  margin-bottom: 55px;
+}
+.advantages__inner {
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  row-gap: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+.advantages__advantage {
+  border: 1px solid #C3C3C3;
+  border-radius: 15px;
+  padding: 20px 30px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex-basis: 36%;
+  background-color: #fff;
+  color: #000;
+}
+.advantages__advantage > img {
+  margin-bottom: 10px;
+  width: 79px;
+}
+.advantages__advantage-title {
+  font-weight: 500;
+  font-family: "Golos Text", sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.advantages__advantage p {
+  font-size: 11px;
+}
+.advantages__advantage.secondary {
+  background-color: #eb6423;
+  color: #fff;
+  gap: 5px;
+}
+.advantages__photo {
+  flex-basis: 23%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.advantages__photo img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.ad {
+  background-image: url(../img/background/background-ad.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 45px;
+}
+.ad__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.ad__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+}
+.ad__title {
+  text-transform: uppercase;
+  font-size: 30px;
+  font-family: "Golos Text", sans-serif;
+  color: #fff;
+  font-weight: 400;
+}
+.ad__title span {
+  color: #e1c68f;
+}
+.ad__slogan {
+  font-family: "Golos Text", sans-serif;
+  text-transform: uppercase;
+  font-size: 40px;
+  letter-spacing: 5%;
+  font-weight: 400;
+  max-width: 350px;
+}
+.ad__slogan span {
+  font-size: 65px;
+  color: #e1c68f;
+}
+.ad__desc {
+  font-size: 15px;
+  padding-left: 48px;
+  position: relative;
+}
+.ad__desc::before {
+  content: "";
+  display: block;
+  width: 34px;
+  height: 2px;
+  background-color: #555862;
+  position: absolute;
+  left: 0;
+  top: 11px;
+}
+.ad__link {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  font-weight: 500;
+  font-family: "Golos Text", sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 24px 72px;
+  background-color: #e1c68f;
+  border-radius: 8px;
+  transition: opacity 0.2s linear;
+}
+.ad__link:hover {
+  opacity: 0.9;
+}
+.ad__imgs {
+  flex-basis: 25%;
+  position: relative;
+}
+.ad__zoom-tower {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  transform: translateX(-100%);
+}
+.ad__nameboard {
+  padding: 10px 12px;
+  background-color: #fff;
+  border-radius: 8px;
+  color: #eb6423;
+  font-weight: bold;
+  font-size: 15px;
+  max-width: 260px;
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  transform: translateX(-30%);
 }
