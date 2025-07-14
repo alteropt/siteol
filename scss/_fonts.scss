@@ -12,16 +12,4 @@
   src: url(../fonts/Verdana-Bold.ttf) format('ttf');
 }
 
-@font-face {
-  font-family: 'GolosText', sans-serif;
-  font-weight: bold;
-  font-style: normal;
-  src: url(../fonts/GolosText-Bold.ttf) format('ttf');
-}
-
-@font-face {
-  font-family: 'GolosText', sans-serif;
-  font-weight: medium;
-  font-style: normal;
-  src: url(../fonts/GolosText-Medium.ttf) format('ttf');
-}
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap');

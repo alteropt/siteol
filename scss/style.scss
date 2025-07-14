@@ -1,6 +1,7 @@
 @import './fonts';
 @import './variables';
 @import './normalize';
+@import './animations';
 @import './ui';
 
 body {
@@ -97,16 +98,19 @@ header {
   background-image: $gTertiary, url(../img/background/background-intro.jpg);
   background-size: cover;
 
+  .container {
+    position: relative;
+  }
+
   &__inner {
     margin: 0;
+    width: 70%;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
     gap: 10px;
-
-    padding-right: 25%;
 
     h1 {
       font-size: $fsTitle;
@@ -133,6 +137,8 @@ header {
     width: 21px;
     height: 21px;
 
+    cursor: pointer;
+
     opacity: 0.5;
 
     &-active {
@@ -146,7 +152,232 @@ header {
     outline: none;
     cursor: pointer;
   }
+
+  .tosite {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    
+    animation-name: scale-in-out;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+  }
 }
 
+// Cards
+.cards {
+  margin-top: -45px;
+  padding-bottom: 95px;
 
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  &__card {
+    position: relative;
+
+    border-radius: 8px;
+    border-bottom: 7px solid $cTertiary;
+    padding: 15px;
+    
+    flex-basis: 30%;
+
+    &:nth-child(1) {
+      background-color: #fff;
+      background-image: url(../img/cards/backgrounds/1.png);
+      background-position: right bottom;
+      background-repeat: no-repeat;
+
+      .cards__card-text {
+        max-width: 45%;
+      }
+    }
+
+    &:nth-child(2) {
+      background-image: $gWhite, url(../img/cards/backgrounds/2.jpg);
+      background-size: cover;
+    }
+
+    &:nth-child(3) {
+      background-image: $gWhite, url(../img/cards/backgrounds/3.png);
+      background-repeat: no-repeat;
+    }
+    
+    &-text {
+      max-width: 60%;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      
+      font-family: $ffSecondary;
+      color: #000;
+      
+      h5 {
+        font-size: $fsSubtitle;
+        font-weight: 500;
+      }
+
+      p {
+        font-size: $fsText;
+
+        span {
+          font-size: 18px;
+          margin-bottom: 4px;
+          font-weight: 500;
+        }
+      }
+    }
+
+    >img {
+      position: absolute;
+
+      bottom: 15px;
+      right: 15px;
+    }
+  }
+}
+
+// Numbers
+.numbers {
+  padding-bottom: 55px;
+
+  .container {
+    position: relative;
+  }
+
+  &__map {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &__inner {
+    padding: 100px 0;
+
+    display: flex;
+    gap: 30px;
+  }
+
+  &__number {
+    height: 215px;
+    width: 215px;
+
+    text-align: center;
+
+    position: relative;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      top: 0;
+      left: 1%;
+      z-index: -1;
+
+      width: 97%;
+      height: 97%;
+
+      border: 1px solid #C3C3C3;
+
+      border-radius: 100%;
+    }
+
+    >div {
+      display: flex;
+      flex-direction: column;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    span {
+      font-family: $ffSecondary;
+      font-weight: bold;
+      font-size: $fsTitle;
+      color: $cTertiary;
+    }
+    
+    p {
+      font-size: 13px;
+      color: #000;
+      max-width: 165px;
+    }
+  }
+}
+
+// Contact
+.contact {
+  padding: 60px 0 90px;
+  background-image: url(../img/background/background-contact.png);
+  background-size: cover;
+  position: relative;
+
+  overflow: hidden;
+
+  &::before, &::after {
+    content: '';
+
+    position: absolute;
+    bottom: 0;
+    
+    display: block;
+    height: 100%;
+    width: 50%;
+    z-index: 1;
+  }
+
+  &::before {
+    background: linear-gradient(225deg,rgba(255, 255, 255, 0) 0%, rgba(235, 100, 35, .1) 50%, rgba(235, 100, 35, .8) 100%);
+    left: 0;
+  }
+
+  &::after {
+    background: linear-gradient(135deg,rgba(255, 255, 255, 0) 0%, rgba(235, 100, 35, .1) 50%, rgba(235, 100, 35, .8) 100%);
+    right: 0;
+  }
+
+  &__inner {
+    max-width: 520px;
+    margin: 0 auto;
+
+    position: relative;
+    z-index: 2;
+  }
+
+  .small-title {
+    margin-bottom: 24px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 412px;
+
+    p {
+      margin-top: -10px;
+      font-size: $fsSmall;
+      color: #000;
+    }
+
+    input {
+      border: 1px solid $cSecondary;
+    }
+
+    button {
+      padding: 16px 0;
+    }
+  }
+}
 

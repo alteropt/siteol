@@ -12,6 +12,7 @@ $cActive: #e1c68f;
 // Gradients
 $gSecondary: linear-gradient(to bottom, rgba(255, 255, 255, 0) 75%, $cSecondary 100%); 
 $gTertiary: linear-gradient(to bottom, rgba(255, 255, 255, 0) 75%, $cTertiary 100%); 
+$gWhite: linear-gradient(to bottom, #fff 25%, rgba(255, 255, 255, 0) 100%);
 
 // Border Radiuses
 $brSmall: 8px;
@@ -20,4 +21,4 @@ $brBig: 50px;
 
 // Font Families
 $ffMain: 'Verdana', sans-serif;
-$ffSecondary: 'GolosText', sans-serif;
+$ffSecondary: 'Golos Text', sans-serif;
