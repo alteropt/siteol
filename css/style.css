@@ -819,3 +819,45 @@ header {
   left: 0;
   transform: translateX(-30%);
 }
+
+.about {
+  padding: 56px 0 70px;
+}
+.about__inner {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.about__content {
+  flex-basis: 40%;
+  display: flex;
+  flex-direction: column;
+}
+.about__title {
+  margin-bottom: 25px;
+}
+.about__text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #000;
+  margin-bottom: 40px;
+}
+.about__text span {
+  font-weight: 700;
+  color: #eb6423;
+}
+.about__btn.btn {
+  padding: 20px;
+  border: 3px solid #eb6423;
+  border-radius: 15px;
+  font-weight: bold;
+  color: #eb6423;
+  background-color: transparent;
+  text-transform: uppercase;
+  transition: background-color 0.2s linear, color 0.2s linear;
+}
+.about__btn.btn:hover {
+  background-color: #eb6423;
+  color: #fff;
+}
