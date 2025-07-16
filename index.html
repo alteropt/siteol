@@ -32,6 +32,10 @@
           </div>
         </div>
       </div>
+
+      <div class="burger">
+        <span></span>
+      </div>
     </div>
   </header>
 
@@ -58,11 +62,11 @@
           <button class="intro__swiper-next"><img src="./img/slider/next-slide-arrow.svg" alt="Следующий слайд"></button>
         </div>
       </div>
-      <button class="tosite"><img src="./img/toSite.svg" alt="Вниз"></button>
+      <a href="#cards" class="tosite"><img src="./img/toSite.svg" alt="Вниз"></a>
     </div>
   </section>
 
-  <section class="cards">
+  <section id="cards" class="cards">
     <div class="container">
       <div class="cards__inner">
         <div class="cards__card">
@@ -401,6 +405,19 @@
     </div>
   </section>
 
+  <div class="map__card mobile">
+    <img src="./img/map/quotes.svg" alt="Кавычки" class="map__quotes">
+    <p class="map__quote">Для нас каждый новый адрес — не просто инвестиция, а возможность подарить кому-то спокойствие, свободу и чуть больше уверенности в завтрашнем дне. Успешные инвестиции начинаются не с цифр, а с отношения. У нас оно всегда одинаковое — как для лучшего друга.</p>
+    <div>
+      <h5 class="map__card-name">Ксения Зубрич</h5>
+      <p class="map__card-prof">Менеджер отдела продаж Orange.Life!</p>
+    </div>
+      <div class="map__card-photos">
+      <img src="./img/map/quote-photo.png" alt="Фото">
+      <img src="./img/logo/logo-orange.png" alt="Лого">
+    </div>
+  </div>
+
   <section class="advantages">
     <div class="container">
       <h2 class="section-title advantages__title">Преимущества</h2>
@@ -445,7 +462,7 @@
           <a href="/" class="ad__link">На страницу проекта</a>
         </div>
         <div class="ad__imgs">
-          <img src="./img/ad/tower.png" alt="Башня">
+          <img src="./img/ad/tower.png" alt="Башня" class="ad__tower">
           <img src="./img/ad/zoom-tower.png" alt="Подробнее" class="ad__zoom-tower">
           <div class="ad__nameboard"><p>Коммерческие помещения В Санкт-Петербурге от 2.9&nbsp;миллионов рублей</p></div>
         </div>
@@ -461,6 +478,7 @@
           <div class="about__text">
             <p><span>Orange.Life!</span> – это международная инвестиционная компания в сфере недвижимости, входящая в состав холдинга Orange Group. Холдинг представляет собой экосистему, созданную для генерации ценности для инвесторов: от проектирования и строительства доходной недвижимости до эффективного управления номерным фондом, что обеспечивает высокую доходность для клиентов.</p>
             <p>Имея более чем <span>25-летний</span> опыт в организации и управлении объектами недвижимости, мы ответственно относимся к безопасности ваших инвестиций и гарантируем доход с вложений в наши проекты сети инвест-отелей Orange.Life! в центре Санкт-Петербурга.</p>
+            <img class="about__photo-mobile" src="./img/about/photo.png" alt="Фото">  
             <p>Наш многолетний опыт и репутация в сфере недвижимости – это гарант вашего спокойствия. Ведь самое главное для нас – это довольные клиенты! Мы делаем людей счастливыми, даря финансовую свободу и независимость!</p>
           </div>
           <a href="/" class="btn btn-text about__btn">СВЯЗАТЬСЯ С НАМИ →</a>
@@ -514,17 +532,17 @@
   </section>
 
   <section class="bid">
-    <div class="container right">
+    <div class="container">
       <h2 class="section-title bid__title">Есть вопросы? <br>Свяжитесь с нами</h2>
       <form class="bid__form">
         <input type="text" placeholder="Имя" tabindex="4">
         <input type="tel" placeholder="Телефон" tabindex="5">
         <button class="btn btn-signup" tabindex="6" type="submit" name="bid-button">Оставить заявку</button>
-        <label class="bid__agreement" for="bid-button">By subscribing you agree with our Privacy Policy and provide consent to receive updates from our company.</p>
+        <label class="bid__agreement" for="bid-button">By subscribing you agree with our Privacy Policy and provide consent to receive updates from our company.</label>
       </form>
-    </div>
-    <div class="bid__photo">
-      <img src="./img/bid/photo.png" alt="Фото">
+      <div class="bid__photo">
+        <img src="./img/bid/photo.png" alt="Фото">
+      </div>
     </div>
   </section>
 

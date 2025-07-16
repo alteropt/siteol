@@ -61,6 +61,7 @@ document.addEventListener('click', function(event) {
 const introSwiper = new Swiper('.intro__inner', {
   slidesPerView: 1,
   loop: true,
+  spaceBetween: 20,
   navigation: {
     nextEl: '.intro__swiper-next',
     prevEl: '.intro__swiper-prev',
@@ -93,3 +94,47 @@ portfolioTabs.forEach(portfolioTab => {
   })
 })
 
+// News Fade
+const newsMore = document.querySelector('.news__more')
+const fadeEl = document.querySelector('.news__fade')
+newsMore.addEventListener('scroll', function() {
+  let scrolledWidth = newsMore.scrollLeft
+  if(newsMore.scrollWidth - newsMore.offsetWidth === scrolledWidth) {
+    fadeEl.classList.add('end')
+  } else {
+    fadeEl.classList.remove('end')
+  }
+})
+
+// Header Fixed
+const header = document.querySelector('header')
+
+let lastScrollTop = 0
+window.addEventListener('scroll', function() {
+  let st = window.pageYOffset || header.scrollTop;
+  if (st - lastScrollTop > 50){
+     header.classList.add('hide')
+  } else if(lastScrollTop - st > 50) {
+    header.classList.remove('hide')
+  }
+
+  if(st === 0) {
+    header.classList.remove('scrolled')
+    header.classList.remove('hide')
+  } else {
+    header.classList.add('scrolled')
+  }
+
+  lastScrollTop = st <= 0 ? 0 : st; 
+})
+
+// Header Burger
+const burger = document.querySelector('.burger')
+const headerInner = document.querySelector('.header__inner')
+const body = document.querySelector('body')
+
+burger.addEventListener('click', () => {
+  headerInner.classList.toggle('active')
+  body.classList.toggle('overflow')
+  burger.classList.toggle('active')
+})

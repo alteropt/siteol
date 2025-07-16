@@ -7,12 +7,24 @@
   font-size: 45px;
   font-weight: bold;
   color: #4b4b4b;
+
+  @media(max-width: 1024px) {
+    font-size: 40px;   
+  }
+
+  @media(max-width: 768px) {
+    font-size: 30px;  
+  }
 }
 
 .small-title {
   font-weight: bold;
   font-size: 30px;
   color: #4b4b4b;
+
+  @media(max-width: 768px) {
+    font-size: 24px;  
+  }
 }
 
 // Buttons
@@ -168,5 +180,68 @@ input {
   &::placeholder {
     color: $cSecondary;
     opacity: 0.3;
+  }
+}
+
+// Burger
+.burger {
+  display: none;
+
+  @media(max-width: 1024px) {
+    display: block;
+    width: 32px;
+    height: 24px;
+    position: relative;
+
+    span {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      width: 100%;
+      height: 2px;
+
+      background-color: #fff;
+    }
+
+    &::before, &::after {
+      content: '';
+
+      display: block; 
+      width: 100%;
+      height: 2px;
+
+      position: absolute;
+
+      background-color: #fff;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    &.active {
+      position: absolute;
+      top: 32px;
+      right: 32px;
+
+      span {
+        display: none;
+      }
+
+      &::before {
+        transform: rotate(45deg);
+        top: 11px;
+      }
+
+      &::after {
+        transform: rotate(135deg);
+        top: 12px;
+      }
+    }
   }
 }
