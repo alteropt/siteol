@@ -30,6 +30,10 @@
   
   cursor: pointer;
 
+  transition: color .2s linear,
+  background-color .2s linear,
+  border-color .2s linear;
+
   &-text {
     text-transform: uppercase;
   }
@@ -154,6 +158,12 @@ input {
   color: $cSecondary;
 
   border-radius: 8px;
+
+  border: 1px solid rgba(235, 100, 35, .5);
+
+  &:focus {
+    border-color: rgba(235, 100, 35, 1);
+  }
 
   &::placeholder {
     color: $cSecondary;

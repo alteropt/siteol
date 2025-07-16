@@ -75,6 +75,7 @@ img {
   font-family: "Verdana", sans-serif;
   color: #fff;
   cursor: pointer;
+  transition: color 0.2s linear, background-color 0.2s linear, border-color 0.2s linear;
 }
 .btn-text {
   text-transform: uppercase;
@@ -172,6 +173,10 @@ input {
   font-size: 20px;
   color: #eb6423;
   border-radius: 8px;
+  border: 1px solid rgba(235, 100, 35, 0.5);
+}
+input:focus {
+  border-color: rgb(235, 100, 35);
 }
 input::-moz-placeholder {
   color: #eb6423;
@@ -191,6 +196,7 @@ body {
 
 .container {
   max-width: 1280px;
+  width: 100%;
   padding: 0 40px;
   margin: 0 auto;
 }
@@ -468,20 +474,13 @@ header {
   gap: 25px;
   max-width: 412px;
 }
-.contact__form p {
+.contact__form label {
   margin-top: -10px;
   font-size: 10px;
   color: #000;
 }
-.contact__form input {
-  border: 1px solid rgba(235, 100, 35, 0.5);
-}
-.contact__form input:focus {
-  border-color: rgb(235, 100, 35);
-}
 .contact__form button {
   padding: 16px 0;
-  transition: background-color 0.2s linear;
 }
 .contact__form button:focus, .contact__form button:hover {
   background-color: #5546aa;
@@ -840,7 +839,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  color: #000;
+  color: #4B4B4B;
   margin-bottom: 40px;
 }
 .about__text span {
@@ -854,10 +853,375 @@ header {
   font-weight: bold;
   color: #eb6423;
   background-color: transparent;
-  text-transform: uppercase;
   transition: background-color 0.2s linear, color 0.2s linear;
 }
 .about__btn.btn:hover {
   background-color: #eb6423;
   color: #fff;
+}
+
+.team {
+  padding-bottom: 96px;
+}
+.team__headline {
+  color: #4B4B4B;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 550px;
+  margin-bottom: 30px;
+}
+.team__subtitle {
+  font-size: 15px;
+}
+.team__members {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 16px;
+}
+.team__member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000;
+  flex-basis: 30%;
+  text-align: center;
+}
+.team__member-name {
+  font-family: "Golos Text", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+.team__member-prof {
+  font-size: 15px;
+  opacity: 0.5;
+}
+
+.bid {
+  margin: 72px 0;
+  padding: 24px 0 36px;
+  background-color: #5546aa;
+  position: relative;
+}
+.bid__title {
+  color: #fff;
+  margin-bottom: 25px;
+}
+.bid__form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 15px;
+  width: 421px;
+}
+.bid__form input {
+  color: #5546aa;
+  border: 1px solid #fff;
+}
+.bid__form input:focus {
+  border-color: #eb6423;
+}
+.bid__form input::-moz-placeholder {
+  color: #5546aa;
+}
+.bid__form input::placeholder {
+  color: #5546aa;
+}
+.bid__form button {
+  padding: 16px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  color: #5546aa;
+  font-size: 20px;
+  font-weight: 700;
+}
+.bid__form button:focus, .bid__form button:hover {
+  color: #fff;
+  background-color: #5546aa;
+  border-color: #fff;
+}
+.bid__agreement {
+  max-width: 420px;
+  font-size: 10px;
+  margin-top: -10px;
+}
+.bid__photo {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.news {
+  padding: 100px 0 140px;
+}
+.news__title {
+  margin-bottom: 40px;
+}
+.news__main {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  height: 270px;
+  margin-bottom: 30px;
+}
+.news__photo {
+  flex-basis: 65%;
+  border: 1px solid #eb6423;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.news__photo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.news__info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-basis: 30%;
+}
+.news__info-title {
+  font-family: "Golos Text", sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  color: #eb6423;
+}
+.news__info-desc {
+  font-family: "Golos Text", sans-serif;
+  color: #000;
+  font-size: 15px;
+  opacity: 0.7;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+.news__info-btn {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 16px;
+}
+.news__fade {
+  position: relative;
+}
+.news__fade::after {
+  content: "";
+  width: 30%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: linear-gradient(to left, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+}
+.news__more {
+  margin-bottom: 30px;
+  overflow-x: auto;
+  padding-bottom: 25px;
+}
+.news__more::-webkit-scrollbar {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+.news__more::-webkit-scrollbar-button {
+  display: none;
+}
+.news__more::-webkit-scrollbar-thumb {
+  background-color: #eb6423;
+  border-radius: 10px;
+}
+.news__more-container {
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  gap: 28px;
+  align-items: stretch;
+}
+.news__more-one {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 20%;
+}
+.news__more-one a {
+  border-radius: 15px;
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+.news__more-one a::after {
+  content: "Читать полностью";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background-color: rgba(235, 100, 35, 0.5);
+  transform: translateY(100%);
+  transition: transform 0.2s linear;
+}
+.news__more-one a:hover::after {
+  transform: translateY(0);
+}
+.news__more-one a img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.news__more-one h5 {
+  font-family: "Golos Text", sans-serif;
+  font-weight: 500;
+  color: #000;
+  font-size: 15px;
+}
+.news__more-btn {
+  background-color: transparent;
+  color: #eb6423;
+  padding: 16px 80px;
+  font-weight: bold;
+  font-size: 20px;
+  border: 1px solid #eb6423;
+}
+.news__more-btn:hover {
+  background-color: #eb6423;
+  color: #fff;
+}
+
+footer {
+  padding: 60px 0 50px;
+  background-color: #5546aa;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  font-family: "Golos Text", sans-serif;
+  color: #fff;
+}
+footer a {
+  transition: opacity 0.2s linear;
+}
+footer a:hover {
+  opacity: 0.8;
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer__left {
+  flex-basis: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer__contacts {
+  margin-bottom: 36px;
+}
+.footer__contacts > h4 {
+  margin-bottom: 25px;
+}
+.footer__contacts ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer__contacts ul li {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  gap: 15px;
+}
+
+.footer__title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.footer__social {
+  display: flex;
+  gap: 10px;
+}
+
+.footer__copyright {
+  font-weight: 500;
+  max-width: 410px;
+  font-size: 20px;
+}
+
+.footer__right {
+  flex-basis: 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.footer__nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+.footer__nav ul {
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer__nav ul li {
+  font-size: 20px;
+}
+
+.footer__form h4 {
+  margin-bottom: 8px;
+}
+.footer__form > div {
+  display: flex;
+  gap: 14px;
+}
+.footer__form input {
+  border: 0;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  border-radius: 0px;
+  padding: 12px;
+  padding-left: 0;
+  font-size: 18px;
+  font-family: "Golos Text", sans-serif;
+  color: #fff;
+}
+.footer__form input::-moz-placeholder {
+  opacity: 0.5;
+  color: #fff;
+}
+.footer__form input::placeholder {
+  opacity: 0.5;
+  color: #fff;
+}
+.footer__form button {
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #fff;
+  background: transparent;
+  font-size: 15px;
+}
+.footer__form label {
+  max-width: 310px;
+  display: block;
+  font-family: "Verdana", sans-serif;
+  font-size: 10px;
 }

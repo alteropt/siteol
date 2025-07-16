@@ -13,6 +13,7 @@ body {
 
 .container {
   max-width: 1280px;
+  width: 100%;
   padding: 0 40px;
   margin: 0 auto;
 }
@@ -365,23 +366,14 @@ header {
     gap: 25px;
     max-width: 412px;
 
-    p {
+    label {
       margin-top: -10px;
       font-size: $fsSmall;
       color: #000;
     }
 
-    input {
-      border: 1px solid rgba(235, 100, 35, .5);
-
-      &:focus {
-        border-color: rgba(235, 100, 35, 1);
-      }
-    }
-
     button {
       padding: 16px 0;
-      transition: background-color .2s linear;
 
       &:focus, &:hover {
         background-color: $cTertiary;
@@ -837,7 +829,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    color: #000;
+    color: #4B4B4B;
 
     margin-bottom: 40px;
 
@@ -854,7 +846,6 @@ header {
     font-weight: bold;
     color: $cSecondary;
     background-color: transparent;
-    text-transform: uppercase;
 
     transition: background-color .2s linear,
     color .2s linear;
@@ -865,3 +856,436 @@ header {
     }
   }
 }
+
+// Team
+.team {
+  padding-bottom: 96px;
+  
+  &__headline {
+    color: #4B4B4B;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    max-width: 550px;
+    margin-bottom: 30px;
+  }
+
+  &__subtitle {
+    font-size: $fsText;
+  }
+
+  &__members {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  &__member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000;
+
+    flex-basis: 30%;
+
+    text-align: center;
+
+    &-name {
+      font-family: $ffSecondary;
+      font-weight: 500;
+      font-size: $fsSubtitle;
+    }
+
+    &-prof {
+      font-size: $fsText;
+      opacity: 0.5; 
+    }
+  }
+}
+
+// Bid
+.bid {
+  margin: 72px 0;
+  padding: 24px 0 36px;
+  background-color: $cTertiary;
+  position: relative;
+
+  &__title {
+    color: #fff;
+    margin-bottom: 25px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 15px;
+
+    width: 421px;
+
+    input {
+      color: $cTertiary;
+      border: 1px solid #fff;
+
+      &:focus {
+        border-color: $cSecondary;
+      }
+
+      &::placeholder {
+        color: $cTertiary;
+      }
+    }
+
+    button {
+      padding: 16px;
+      background-color: #fff;
+      border: 1px solid #fff;
+      
+      color: $cTertiary;
+      font-size: $fsSubtitle;
+      font-weight: 700;
+
+      &:focus, &:hover {
+        color: #fff;
+        background-color: $cTertiary;  
+        border-color: #fff;
+      }
+    }
+  }
+
+  &__agreement {
+    max-width: 420px;
+    font-size: $fsSmall;
+    margin-top: -10px;
+  }
+
+  &__photo {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+// News
+.news {
+  padding: 100px 0 140px;
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    height: 270px;
+
+    margin-bottom: 30px;
+  }
+
+  &__photo {
+    flex-basis: 65%;
+    border: 1px solid $cSecondary;
+    border-radius: $brMedium;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-basis: 30%;
+
+    &-title {
+      font-family: $ffSecondary;
+      font-weight: 500;
+      font-size: 25px;
+      color: $cSecondary;
+    }
+
+    &-desc {
+      font-family: $ffSecondary;
+      color: #000;
+      font-size: $fsText;
+      opacity: 0.7;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      overflow: hidden;
+      -webkit-box-orient: vertical;   
+    }
+
+    &-btn {
+      font-size: $fsSubtitle;
+      font-weight: 700;
+      padding: 16px;
+    }
+  }
+
+  &__fade {
+    position: relative;
+    
+    &::after {
+      content: '';
+
+      width: 30%;
+      height: 100%;
+      display: block;
+
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%)
+    }
+  }
+
+  &__more {    
+    margin-bottom: 30px;
+    overflow-x: auto;
+    padding-bottom: 25px;
+
+    &::-webkit-scrollbar {
+      background-color: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-button {
+      display: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $cSecondary;
+      border-radius: 10px;
+    }
+
+    &-container {
+      width: max-content;
+      
+      display: flex;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    &-one {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 20%;
+
+      a {
+        border-radius: $brMedium;
+        overflow: hidden;
+        display: block;
+        position: relative;
+
+        &::after {
+          content: 'Читать полностью';
+
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          width: 100%;
+          height: 100%;
+          border-radius: $brMedium;
+
+          background-color: rgba(235, 100, 35, .5);
+
+          transform: translateY(100%);
+          transition: transform .2s linear;
+        }
+
+        &:hover::after {
+          transform: translateY(0);
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      h5 {
+        font-family: $ffSecondary;
+        font-weight: 500;
+        color: #000;
+        font-size: $fsText;
+      }
+    }
+
+    &-btn {
+      background-color: transparent;
+      color: $cSecondary;
+      padding: 16px 80px;
+      font-weight: bold;
+      font-size: $fsSubtitle;
+      border: 1px solid $cSecondary;
+      
+
+      &:hover {
+        background-color: $cSecondary;
+        color: #fff;
+      }
+    }
+  }
+}
+
+// Footer 
+footer {
+  padding: 60px 0 50px;
+  background-color: $cTertiary;
+  border-top-left-radius: $brBig;
+  border-top-right-radius: $brBig;
+
+  font-family: $ffSecondary;
+  color: #fff;
+
+  a {
+    transition: opacity .2s linear;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer__left {
+  flex-basis: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer__contacts {
+  margin-bottom: 36px;
+
+  >h4 {
+    margin-bottom: 25px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    li {
+      display: flex;
+      align-items: center;
+      font-size: $fsSubtitle;
+      gap: 15px;
+    }
+  }
+}
+
+.footer__title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.footer__social {
+  display: flex;
+  gap: 10px;
+}
+
+.footer__copyright {
+  font-weight: 500;
+  max-width: 410px;
+  font-size: $fsSubtitle;
+}
+
+.footer__right {
+  flex-basis: 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.footer__nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+
+  ul {
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    li {
+      font-size: $fsSubtitle;
+    }
+  }
+}
+
+.footer__form {
+  h4 {
+    margin-bottom: 8px;
+  }
+
+  >div {
+    display: flex;
+    gap: 14px;
+  }
+
+  input {
+    border: 0;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    border-radius: 0px;
+    padding: 12px;
+    padding-left: 0;
+
+    font-size: 18px;
+    font-family: $ffSecondary;
+    color: #fff;
+
+    &::placeholder {
+      opacity: .5;    
+      color: #fff;
+    }
+  }
+
+  button {
+    border-radius: $brSmall;
+    padding: 10px;
+    border: 1px solid #fff;
+    background: transparent;
+
+    font-size: $fsText; 
+  }
+
+  label {
+    max-width: 310px;
+    display: block;
+    font-family: $ffMain;
+    font-size: $fsSmall;  
+  }
+}
+
