@@ -893,6 +893,11 @@ header.hide {
 .portfolio__items.active {
   display: flex;
 }
+@media (max-width: 768px) {
+  .portfolio__items {
+    justify-content: center;
+  }
+}
 .portfolio__item {
   color: #000;
   display: flex;
@@ -908,12 +913,15 @@ header.hide {
 @media (max-width: 768px) {
   .portfolio__item {
     flex-basis: 100%;
+    align-items: center;
   }
 }
 .portfolio__item-image {
   position: relative;
   overflow: hidden;
   border-radius: 15px;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .portfolio__item-image img {
   -o-object-fit: cover;
@@ -1203,14 +1211,9 @@ header.hide {
   gap: 5px;
 }
 .advantages__photo {
-  flex-basis: 48%;
   border-radius: 15px;
   overflow: hidden;
-}
-@media (max-width: 1440px) {
-  .advantages__photo {
-    flex-basis: 20%;
-  }
+  flex-basis: 20%;
 }
 @media (max-width: 1024px) {
   .advantages__photo {
@@ -1219,7 +1222,12 @@ header.hide {
 }
 @media (max-width: 768px) {
   .advantages__photo {
-    flex-basis: 100%;
+    flex-basis: 48%;
+  }
+}
+@media (max-width: 676px) {
+  .advantages__photo {
+    flex-basis: 70%;
   }
 }
 .advantages__photo img {
@@ -1509,6 +1517,26 @@ header.hide {
   font-size: 15px;
   opacity: 0.5;
 }
+.team__link {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 16px 40px;
+  border: 1px solid #eb6423;
+  margin: 0 auto;
+  margin-top: 40px;
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.team__link:hover {
+  background: transparent;
+  color: #eb6423;
+}
+@media (max-width: 1440px) {
+  .team__link {
+    font-size: 16px;
+  }
+}
 
 .bid {
   margin: 72px 0;
@@ -1608,6 +1636,12 @@ header.hide {
   }
 }
 @media (max-width: 768px) {
+  .bid__photo {
+    right: 40px;
+    width: 50%;
+  }
+}
+@media (max-width: 575px) {
   .bid__photo {
     right: 50%;
     transform: translateX(50%) translateY(-50%);

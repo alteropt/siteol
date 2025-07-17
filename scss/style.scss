@@ -724,6 +724,10 @@ header {
     &.active {
       display: flex;
     }
+
+    @media(max-width: 768px) {
+      justify-content: center;
+    }
   }
 
   &__item {
@@ -734,18 +738,21 @@ header {
 
     flex-basis: 30%;
 
+
     @media(max-width: 1024px) {
       flex-basis: 47%; 
     }
 
     @media(max-width: 768px) {
       flex-basis: 100%; 
+      align-items: center;
     }
 
     &-image {
       position: relative;
       overflow: hidden;
       border-radius: $brMedium;
+      width: fit-content;
 
       img {
         object-fit: cover;
@@ -1066,12 +1073,11 @@ header {
   }
 
   &__photo {
-    flex-basis: 48%;
     border-radius: $brMedium;
     overflow: hidden;
+    flex-basis: 20%;     
 
     @media(max-width: 1440px) {
-      flex-basis: 20%;     
     }
 
     @media(max-width: 1024px) {
@@ -1079,8 +1085,14 @@ header {
     }
 
     @media(max-width: 768px) {
-      flex-basis: 100%;  
+      flex-basis: 48%;  
     }
+
+    @media(max-width: 676px) {
+      flex-basis: 70%;  
+    }
+
+
 
     img {
       object-fit: cover;
@@ -1406,6 +1418,26 @@ header {
       opacity: 0.5; 
     }
   }
+
+  &__link {
+    font-size: $fsSubtitle;
+    font-weight: 700;
+    padding: 16px 40px;
+    border: 1px solid $cSecondary;
+    margin: 0 auto;
+    margin-top: 40px;
+    display: flex;
+    width: fit-content;
+
+    &:hover {
+      background: transparent;
+      color: $cSecondary;
+    }
+
+    @media(max-width: 1440px) {
+      font-size: $fsSubtitleMin;   
+    }
+  }
 }
 
 // Bid
@@ -1508,6 +1540,11 @@ header {
     }
 
     @media(max-width: 768px) {
+      right: 40px;
+      width: 50%;
+    }
+
+    @media(max-width: 575px) {
       right: 50%;
       transform: translateX(50%) translateY(-50%);
       width: 80%;  
