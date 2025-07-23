@@ -1349,19 +1349,6 @@ header.hide {
     width: 50%;
   }
 }
-.ad__zoom-tower {
-  position: absolute;
-  top: 30%;
-  left: 0;
-  transform: translateX(-100%);
-}
-@media (max-width: 768px) {
-  .ad__zoom-tower {
-    width: 50%;
-    left: auto;
-    right: 0;
-  }
-}
 .ad__nameboard {
   padding: 10px 12px;
   background-color: #fff;
@@ -1371,9 +1358,24 @@ header.hide {
   font-size: 15px;
   max-width: 260px;
   position: absolute;
-  bottom: 10%;
+  bottom: 8%;
   left: 0;
   transform: translateX(-30%);
+}
+.ad__nameboard.ad__zoom-tower {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  transform: translateX(-90%);
+  bottom: auto;
+}
+@media (max-width: 768px) {
+  .ad__nameboard.ad__zoom-tower {
+    left: auto;
+    right: 0;
+    transform: translateX(-65%);
+    width: 70%;
+  }
 }
 @media (max-width: 1024px) {
   .ad__nameboard {
