@@ -817,23 +817,15 @@ header {
 
 // Map
 .map {
-  padding: 60px 0 80px;
+  padding: 240px 0 270px;
   background-image: url(../img/background/background-map.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
 
   @media(max-width: 768px) {
     height: 400px;  
     width: 100%;
-    position: relative;
-  }
-
-  .container {
-      position: relative;
-
-    @media(max-width: 768px) {
-      position: static;
-    }
   }
 
   &__card {
@@ -851,7 +843,6 @@ header {
 
     
     @media(max-width: 1024px) {
-      max-width: 400px;
       padding: 28px;  
     }
     
@@ -897,37 +888,24 @@ header {
     display: flex;
     gap: 8px;
 
-    max-width: 340px;
-
-    @media(max-width: 768px) {
-      max-width: 150px;
-    } 
+    max-width: 250px;
 
     &:nth-child(1) {
-      right: 40px; 
-      top: 5%;
+      right: 20%; 
+      bottom: 5%;
     }
     &:nth-child(2) {
-      left: 50%;
-      top: 30%;
-
-      @media(max-width: 1440px) {
-        left: 65%;
-        top: 40%;   
-      }
-
-      @media(max-width: 768px) {
-        left: 20px;
-      }
+      right: 15%;
+      top: 10%;
     }
     &:last-child {
-      bottom: 10%;
-      right: 10%;
+      top: 25%;
+      right: 5%;
 
-      @media(max-width: 1440px) {
-        right: 5%;   
+      @media(max-width: 768px) {
+        top: 35%;   
       }
-    }
+    } 
 
     &-icon {
       position: absolute;
@@ -944,18 +922,10 @@ header {
     &-address {
       margin-bottom: 10px;
       font-size: $fsText;
-
-      @media(max-width: 768px) {
-        font-size: 10px;
-      }
     }
 
     &-desc {
       font-size: $fsSmall;
-
-      @media(max-width: 768px) {
-        font-size: 8px;
-      }
     }
   }
 }
@@ -1821,6 +1791,10 @@ footer {
 
     &:hover {
       opacity: 0.8;
+
+      @media(max-width: 768px) {
+        opacity: 1;  
+      }
     }
   }
 }

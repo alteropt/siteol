@@ -973,24 +973,16 @@ header.hide {
 }
 
 .map {
-  padding: 60px 0 80px;
+  padding: 240px 0 270px;
   background-image: url(../img/background/background-map.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
 }
 @media (max-width: 768px) {
   .map {
     height: 400px;
     width: 100%;
-    position: relative;
-  }
-}
-.map .container {
-  position: relative;
-}
-@media (max-width: 768px) {
-  .map .container {
-    position: static;
   }
 }
 .map__card {
@@ -1006,7 +998,6 @@ header.hide {
 }
 @media (max-width: 1024px) {
   .map__card {
-    max-width: 400px;
     padding: 28px;
   }
 }
@@ -1044,39 +1035,23 @@ header.hide {
   border-radius: 15px;
   display: flex;
   gap: 8px;
-  max-width: 340px;
-}
-@media (max-width: 768px) {
-  .map__object {
-    max-width: 150px;
-  }
+  max-width: 250px;
 }
 .map__object:nth-child(1) {
-  right: 40px;
-  top: 5%;
+  right: 20%;
+  bottom: 5%;
 }
 .map__object:nth-child(2) {
-  left: 50%;
-  top: 30%;
-}
-@media (max-width: 1440px) {
-  .map__object:nth-child(2) {
-    left: 65%;
-    top: 40%;
-  }
-}
-@media (max-width: 768px) {
-  .map__object:nth-child(2) {
-    left: 20px;
-  }
+  right: 15%;
+  top: 10%;
 }
 .map__object:last-child {
-  bottom: 10%;
-  right: 10%;
+  top: 25%;
+  right: 5%;
 }
-@media (max-width: 1440px) {
+@media (max-width: 768px) {
   .map__object:last-child {
-    right: 5%;
+    top: 35%;
   }
 }
 .map__object-icon {
@@ -1095,18 +1070,8 @@ header.hide {
   margin-bottom: 10px;
   font-size: 15px;
 }
-@media (max-width: 768px) {
-  .map__object-address {
-    font-size: 10px;
-  }
-}
 .map__object-desc {
   font-size: 10px;
-}
-@media (max-width: 768px) {
-  .map__object-desc {
-    font-size: 8px;
-  }
 }
 
 .map__card.mobile {
@@ -1893,6 +1858,11 @@ footer a {
 }
 footer a:hover {
   opacity: 0.8;
+}
+@media (max-width: 768px) {
+  footer a:hover {
+    opacity: 1;
+  }
 }
 
 .footer__inner {
